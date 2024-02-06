@@ -96,7 +96,7 @@ const olvidePassword = async (req, res) => {
         // Enviar el email de recuperacion
         emailOlvidePassword({
             email: usuario.email,
-            nombre: usuario.nombte,
+            nombre: usuario.nombre,
             token: usuario.token
         })
 
