@@ -22,7 +22,7 @@ const registrar = async (req, res) => {
         // Enviar el email de confirmacion
         emailRegistro({
             email: usuario.email,
-            nombre: usuario.nombte,
+            nombre: usuario.nombre,
             token: usuario.token
         })
 

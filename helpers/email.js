@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 
 export const emailRegistro = async (datos) => {
     const { email, nombre, token } = datos
-
+    
     const transport = nodemailer.createTransport({
         host: process.env.EMAIL_HOST,
         port: process.env.EMAIL_PORT,
@@ -14,7 +14,7 @@ export const emailRegistro = async (datos) => {
 
     // Informacion del email
     const info = await transport.sendMail({
-        from: '"UpTask - Administrador de proyectos" <cuentas@uptask.com>',
+        from: 'UpTask - Administrador de proyectos <cuentas@uptask.com',
         to: email,
         subject: "UpTask - Confirma tu cuenta",
         text: "Confirma tu cuenta en UpTask",
@@ -26,6 +26,7 @@ export const emailRegistro = async (datos) => {
             <p>Si tu no creaste esta cuenta, puedes ignorar el mensaje.</p>
         `
     })
+
 }
 
 export const emailOlvidePassword = async (datos) => {
@@ -42,7 +43,7 @@ export const emailOlvidePassword = async (datos) => {
 
     // Informacion del email
     const info = await transport.sendMail({
-        from: '"UpTask - Administrador de proyectos" <cuentas@uptask.com>',
+        from: 'UpTask - Administrador de proyectos <cuentas@uptask.com',
         to: email,
         subject: "UpTask - Reestablece tu password",
         text: "Reestablece tu password en UpTask",
